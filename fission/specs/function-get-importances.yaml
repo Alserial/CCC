@@ -1,0 +1,33 @@
+apiVersion: fission.io/v1
+kind: Function
+metadata:
+  creationTimestamp: null
+  name: get-importances
+spec:
+  InvokeStrategy:
+    ExecutionStrategy:
+      ExecutorType: poolmgr
+      MaxScale: 0
+      MinScale: 0
+      SpecializationTimeout: 120
+      TargetCPUPercent: 0
+    StrategyType: execution
+  concurrency: 500
+  configmaps:
+  - name: parameters
+    namespace: ""
+  environment:
+    name: python-39
+    namespace: ""
+  functionTimeout: 60
+  idletimeout: 120
+  package:
+    functionName: get_analysis.get_importances
+    packageref:
+      name: get-analysis
+      namespace: ""
+  requestsPerPod: 1
+  resources: {}
+  secrets:
+  - name: secret
+    namespace: ""

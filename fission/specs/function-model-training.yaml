@@ -1,0 +1,33 @@
+apiVersion: fission.io/v1
+kind: Function
+metadata:
+  creationTimestamp: null
+  name: model-training
+spec:
+  InvokeStrategy:
+    ExecutionStrategy:
+      ExecutorType: poolmgr
+      MaxScale: 0
+      MinScale: 0
+      SpecializationTimeout: 120
+      TargetCPUPercent: 0
+    StrategyType: execution
+  concurrency: 500
+  configmaps:
+  - name: parameters
+    namespace: ""
+  environment:
+    name: python-39
+    namespace: ""
+  functionTimeout: 1000
+  idletimeout: 120
+  package:
+    functionName: model_training.main
+    packageref:
+      name: model-training
+      namespace: ""
+  requestsPerPod: 1
+  resources: {}
+  secrets:
+  - name: secret
+    namespace: ""

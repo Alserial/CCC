@@ -1,0 +1,6 @@
+flask
+pandas
+xlrd
+# shapely
+# geopandas
+elasticsearch8==8.13.1

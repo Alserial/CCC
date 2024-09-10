@@ -1,0 +1,7 @@
+flask
+pandas
+xlrd
+# shapely
+# geopandas
+elasticsearch8==8.13.1
+scikit-learn==1.4.2

@@ -1,0 +1,11 @@
+apiVersion: fission.io/v1
+kind: TimeTrigger
+metadata:
+  creationTimestamp: null
+  name: update-model
+spec:
+  cron: 0 0 1 * * *
+  functionref:
+    functionweights: null
+    name: model-training
+    type: name

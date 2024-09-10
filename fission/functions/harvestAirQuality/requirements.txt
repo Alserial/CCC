@@ -1,0 +1,6 @@
+flask
+# pandas
+xlrd
+# geopandas
+elasticsearch8==8.13.1
+numpy==1.26.4

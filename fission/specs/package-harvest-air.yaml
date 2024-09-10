@@ -1,0 +1,29 @@
+include:
+- ./functions/library/Utils.py
+- ./functions/harvestAirQuality/__init__.py
+- ./functions/harvestAirQuality/harvestAirQuality.py
+- ./functions/harvestAirQuality/build.sh
+- ./functions/harvestAirQuality/requirements.txt
+kind: ArchiveUploadSpec
+name: functions-library-utils-py-YuAk
+
+---
+apiVersion: fission.io/v1
+kind: Package
+metadata:
+  creationTimestamp: null
+  name: harvest-air
+spec:
+  buildcmd: ./build.sh
+  deployment:
+    checksum: {}
+  environment:
+    name: python-39
+    namespace: ""
+  source:
+    checksum: {}
+    type: url
+    url: archive://functions-library-utils-py-YuAk
+status:
+  buildstatus: pending
+  lastUpdateTimestamp: "2024-05-09T11:54:20Z"
